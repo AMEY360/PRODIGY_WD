@@ -1,1 +1,2 @@
-# AMEY360-PRODIGY_WD
+# PRODIGY_WD
+Its an Web Development Task
