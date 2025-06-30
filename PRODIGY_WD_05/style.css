@@ -1,0 +1,141 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(270deg, #4facfe, #00f2fe, #43e97b, #38f9d7);
+    background-size: 800% 800%;
+    animation: gradientShift 20s ease infinite;
+    transition: background 0.5s ease;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.app-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    transition: transform 0.3s ease;
+}
+
+.search-container {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px 0 0 8px;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+input:focus {
+    box-shadow: 0 0 5px #4facfe;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    background: #4facfe;
+    color: white;
+    cursor: pointer;
+    border-radius: 0 8px 8px 0;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: #00c6ff;
+    transform: scale(1.05);
+}
+
+.weather-display, .forecast-display {
+    margin-top: 20px;
+}
+
+.weather-card {
+    background: #f7f7f7;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.weather-card:hover {
+    transform: scale(1.03);
+}
+
+.forecast-display {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.forecast-card {
+    background: #f7f7f7;
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 10px;
+    min-width: 120px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.forecast-card:hover {
+    transform: scale(1.05);
+    background: #e0e0e0;
+}
+
+.weather-card lottie-player, .forecast-card lottie-player {
+    width: 80px;
+    height: 80px;
+}
+
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #4facfe;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 20px auto;
+    animation: spin 1s linear infinite;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 600px) {
+    .app-container {
+        padding: 20px;
+    }
+
+    input, button {
+        padding: 8px;
+    }
+
+    .forecast-card {
+        min-width: 100px;
+    }
+}
