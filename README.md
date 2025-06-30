@@ -1,2 +1,2 @@
 # PRODIGY_WD
-Its an Web Development Task
+Its an Web Development Tasks
